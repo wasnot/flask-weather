@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="static/modal2.js"></script>
+</head>
+<body>
+
+  <div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel">
+       <!--aria-hidden="true"-->
+       <!--data-show="true" data-keyboard="false" data-backdrop="static"-->
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <!-- Bootstrap: modal.js v3.3.6 では、[this.$element.find('.modal-content')...] している -->
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&#215;</span><span class="sr-only">閉じる</span>
+            </button>
+            <h4 class="modal-title" id="remoteModalLabel">タイトル</h4>
+            <button type="button" class="btn btn-default pull-right" id="accountButton">
+                {% if current_user.is_authenticated %}
+                {{ current_user.id }}
+                {% else %}
+                ログイン
+                {% endif %}
+            </button>
+        </div><!-- /modal-header -->
+        <div class="modal-body row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+        <div class="modal-footer hidden">
+            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+            <!--<button type="button" class="btn btn-primary">変更を保存</button>-->
+        </div><!-- /modal-footer -->
+      </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+  </div> <!-- /.modal -->
+
+
+  <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true" data-show="true" data-keyboard="false">
+       <!--data-backdrop="static">-->
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&#215;</span><span class="sr-only">閉じる</span>
+          </button>
+          <h4 class="modal-title" id="accountModalLabel">Sensyアカウント</h4>
+        </div><!-- /modal-header -->
+        <div class="modal-body">
+            <form method="POST" action="#" id="loginForm"
+                {% if current_user.is_authenticated %}
+                class="hidden"
+                {% endif %}
+            >
+                <div class="form-group">
+                    <label for="email">username</label>
+                    <input type="text" class="form-control" id="email" placeholder="User name" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="pw">
+                </div>
+                <button type="submit" class="btn btn-default">Login</button>
+            </form>
+            <div id="userMessage"
+                {% if not current_user.is_authenticated %}
+                class="hidden"
+                {% endif %}
+            >
+                <p class="lead">
+                    Hello, {{ current_user.id }} <br />
+                </p>
+                <button class="btn btn-danger btn-sm" id="logout">Logout</button>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+          <!--<button type="button" class="btn btn-primary">変更を保存</button>-->
+        </div>
+      </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+  </div> <!-- /.modal -->
+</body>
+</html>

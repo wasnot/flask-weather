@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="static/app.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+        <h1>Item page</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+              <form method="POST" action="#" id="loginForm"
+                    {% if current_user.is_authenticated %}
+                    class="hidden"
+                    {% endif %}
+              >
+                <div class="form-group">
+                  <label for="email">username</label>
+                  <input type="text" class="form-control" id="email" placeholder="User name" name="email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password" name="pw">
+                </div>
+                  <button type="submit" class="btn btn-default">Login</button>
+              </form>
+              <div id="userMessage"
+                    {% if not current_user.is_authenticated %}
+                    class="hidden"
+                    {% endif %}
+              >
+                <p class="lead">
+                    Hello, {{ current_user.id }} <br />
+                </p>
+                <button class="btn btn-danger btn-sm" id="logout">Logout</button>
+                <!--<a href="{{ url_for('logout') }}" class="btn btn-danger btn-sm">Logout</a>-->
+              </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" id="remoteModalButton">Sensy Platform</button>
+
+        <button class="btn btn-lg" id="account">account</button>
+
+    </div>
+    <!--<iframe id="frame"-->
+    <!--{% if session.username %}-->
+            <!--src="http://wasnot.net/modal.html?bid={{ session.bid }}&user={{ session.username }}"-->
+    <!--{% elif session.bid %}-->
+            <!--src="http://wasnot.net/modal.html?bid={{ session.bid }}"-->
+    <!--{% else %}-->
+            <!--src="http://wasnot.net/modal.html"-->
+    <!--{% endif %}-->
+            <!--class="hidden"></iframe>-->
+
+  <!-- リモートモーダルダイアログ の読込先 -->
+  <div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true" data-show="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Bootstrap: modal.js v3.3.6 では、[this.$element.find('.modal-content')...] している -->
+      </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+  </div> <!-- /.modal -->
+
+    <!--<iframe src="local.html" class="hidden" id="local_iframe"></iframe>-->
+
+    <div class="hidden">
+        <header style="background-color:gray" class="hidden">Header</header>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2" style="background-color:red;">Red</div>
+            <div class="col-sm-8" style="background-color:blue;">Blue</div>
+            <div class="col-sm-2" style="background-color:yellow;">Yellow</div>
+          </div>
+        </div>
+        <footer style="background-color:gray">Footer</footer>
+    </div>
+    <div class="container hidden">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>名前</th>
+            <th>メールアドレス</th>
+            <th>電話番号</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+              <td>煌木 太郎</td>
+              <td>taro.kirameki@example.com</td>
+              <td>09011112222</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+              <td>煌木 次郎</td>
+              <td>jiro.kirameki@example.com</td>
+              <td>09033334444</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+              <td>煌木 花子</td>
+              <td>hanako.kirameki@example.com</td>
+              <td>09055556666</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

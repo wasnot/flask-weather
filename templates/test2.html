@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="static/test2.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+        <h1>Item page</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p class="lead">
+                    Test Page <br />
+                </p>
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" id="remoteModalButton">Sensy Platform</button>
+
+    </div>
+
+  <!-- リモートモーダルダイアログ の読込先 -->
+    <div id="modalSpace">
+
+    </div>
+
+
+<div class="container hidden">
+	<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch modal 1</a>
+
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">data-target 属性</button>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel1">Modal header</h3>
+        </div>
+        <div class="modal-body">
+            <p>One modal body…</p>
+            <p>One modal body…</p>
+            <p>One modal body…</p>
+            <p>One modal body…</p>
+            <p>One modal body…</p>
+            <p>One modal body…</p>
+            <p>One modal body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <a href="#myModal2" role="button" class="btn" data-toggle="modal">Launch other modal</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="myModal2" class="modal fade" data-backdrop-limit="1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel2">Modal 2 header</h3>
+        </div>
+        <div class="modal-body">
+            <p>Two modal body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  </body>
+</html>

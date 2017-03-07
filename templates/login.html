@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="http://wasnot.net/static/app.js"></script>
+  </head>
+</head>
+<body>
+    {% if error %}
+        {{ error }}
+    {% endif %}
+
+    <div class="container">
+        <h1>Item page</h1>
+         <div class="panel panel-default">
+             <div class="panel-body">
+            <form method="POST">
+              <div class="form-group">
+                <label for="exampleInputEmail1">username</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User name" name="username">
+              </div>
+              <div class="form-group hidden">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+             </div>
+         </div>
+        <button onclick="wasnotTest();" class="btn btn-primary btn-lg btn-block">Sensy Platform</button>
+    </div>
+
+    <br />
+    <iframe src="http://wasnot.net" class="hidden"></iframe>
+</body>
+</html>
